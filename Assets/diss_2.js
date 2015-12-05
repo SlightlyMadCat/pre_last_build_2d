@@ -19,8 +19,6 @@
  var start_height : float = 4500; //начальная высота полета
  var dif : float = 0; //разница в высотах
  var ugol: float = 0; //угол набора высоты
- //var i:int = 0;
- //var mas=[2000,3000,3900,2000,3800,3300,2500,2100,3400];
  var altmetr : Texture2D;
  var alt_arrow : Texture2D;
  var alt_long_arrow : Texture2D;
@@ -56,7 +54,6 @@ function Start () { //тестовые значения
     distance = 1000;	//дистанция обнаружения
     new_height = 2200;	//новая высота самолета
     v = 240; //условная скорость самолета
-    //fall = true;	//изменение высоты
     count = 1;	//счетчик угла
 }
 
@@ -69,23 +66,18 @@ function Update () {
 
     width = this.transform.position.x;	
     hPlane = start_height + this.transform.position.y*100; 
-    //print("hPlane "+hPlane);
-    //print("new_height"+new_height);
 
     this.transform.position.x+=speed;
-
-    //print("screen "+Screen.width);//разрешение экрана
 
     dif = hPlane - new_height; //выставляем диапазон высот
     if (dif < 0) {
     	dif = -dif;
     }
-    //print("dif "+dif);
 
 	d = Mathf.Sqrt(dif*dif+distance*distance);
 	rotate_angle = Mathf.Asin(dif/d)*Mathf.Rad2Deg;
-
 	yoba_angle = GameObject.Find("cursor").GetComponent(Rotate).rot_angle;
+
     //МОДЕЛЬ ИЗМЕНЕНИЯ ВЫСОТЫ ПОЛЕТА
 
 	if (fall == true) {
@@ -93,7 +85,6 @@ function Update () {
 	        phase = 1;
 	    }
         this.transform.position.y+=vSpeed;
-        //print("2 "+hPlane);
 
         ugol = this.transform.rotation.x*Mathf.Rad2Deg;
         if (ugol < 0) {
@@ -107,12 +98,10 @@ function Update () {
                 	if (hPlane > new_height){
                     	this.transform.Rotate(Vector3.right * Time.deltaTime*5); 
                     	count += 2;
-                    	//vSpeed = -0.04;
                     	ugol+=5;
                     } else {
 						this.transform.Rotate(Vector3.left * Time.deltaTime*5); 
                     	count += 2;
-                    	//vSpeed = 0.04;
                     	ugol+=5;
                     }
                 } else {
@@ -122,7 +111,6 @@ function Update () {
             case 2:
                 //print ("phase2 ");
                 if (dif > count+10) {
-					//count_back += 0.02;
                 } else {
                     phase = 3;
                 }
@@ -143,56 +131,20 @@ function Update () {
                     fall = false;
                     vSpeed = 0;
                     this.transform.rotation.x = 0;
-                    //speed = 0.1;
                     ugol = 0;
                 }
                 break;
-            /*case 4: //движение по горизонтальной  оси
-                print("phase4");
-                //print("1 "+hPlane);
-                if (hPlane > new_height && dif > count){
-                    vSpeed = -0.04;   
-                    count += 2;
-                    print("count "+count);
-                } else if (hPlane < new_height && dif > count) {
-                    vSpeed = 0.04;
-                    count += 2;
-                } else {
-                    vSpeed = 0;
-                    fall = false;
-                }
-                phase++;
-                break;*/
             default:
                 print ("something went wrong");
                 break;
         }
     }
-
-    if(Input.GetKeyDown(KeyCode.Mouse0)){
-     	/*if (fall == false) {
-         	//distance = Input.mousePosition.x-this.transform.position.x;
-         	//print("dis "+distance);
-         	//new_height = 2000 + Input.mousePosition.y*2;
-         	//print("hei "+new_height);
-         	fall = true;
-         	new_height = mas[i];
-         	i++;
-         	if (i>mas.length-1) {
-         	    i=0;
-         	}
-         }*/
-	 }
 }
 
 function OnGUI() {
-    //GUI.Label(new Rect(10,40,500,30), "Скорость: " + speed*2000 + " км/ч. Угол сноса: " + us + " град. Скорость ветра: "+w+" км/ч");
-    //GUI.Label(new Rect(10,10,200,30), "Высота полета: "+hPlane);
-
     var guiMatrix : Matrix4x4 = GUI.matrix;
 
     GUI.DrawTexture(Rect(Screen.width/2-100,0,200,200),air_speed);
-    //GUI.DrawTexture(Rect(Screen.width/2-300,0,200,200),variometer);
     GUI.DrawTexture(Rect(Screen.width/2+100,0,200,200),altmetr);
 
     speedFactor = speed/1.852/260*2000;
@@ -203,7 +155,7 @@ function OnGUI() {
 
     GUI.DrawTexture(Rect(Screen.width/2-100,-30,200,200),air_speed_arrow);
     GUI.matrix = guiMatrix;
-    //guiMatrix = GUI.matrix;
+
     timer = GameObject.Find("cursor").GetComponent(Rotate).timer_on;
 
     if (timer == false) {
@@ -216,9 +168,8 @@ function OnGUI() {
 
     guiMatrix = GUI.matrix;
 
-    heightFactor = hPlane/10000; //4100 - топовая высота
+    heightFactor = hPlane/10000; //9100 - топовая высота
     rotation_angle = Mathf.Lerp(0,360,heightFactor);
-    //print("visrot"+rotation_angle);
     point_visotomer = Vector2(Screen.width/2+200,100);
     GUIUtility.RotateAroundPivot(alt_angle,point_visotomer);
     GUI.DrawTexture(Rect(Screen.width/2+100,-30,200,200),alt_long_arrow);
@@ -228,14 +179,6 @@ function OnGUI() {
     } else  if (alt_angle > rotation_angle){
         alt_angle -= 1;  
     } 
-    	//alt_angle = 0;
-
-    /*varPoint = Vector2(Screen.width/2-200,100);
-    GUIUtility.RotateAroundPivot(angle_var, varPoint); 
-    if (GUI.Button(Rect(Screen.width/2-25, Screen.height/2-25, 50, 50),"Rotate")) {
-    	angle_var += 10;
-    }*/
      
     current_vert = GameObject.Find("cursor").GetComponent(Rotate).cur_vy;
-    //print("Vy"+current_vert);
 }

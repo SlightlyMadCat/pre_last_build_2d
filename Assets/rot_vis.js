@@ -5,13 +5,12 @@ var count = 0;
 var cur_y = 0;
 
 function Start () {
-    //count = 22;
+
 }
 
 function Update () {
     phase = GameObject.Find("plane42").GetComponent(diss_2).phase;
     fall = GameObject.Find("plane42").GetComponent(diss_2).fall;
-    //cur_y = this.transform.position.y;
 
     var hPlane = GameObject.Find("plane42").GetComponent(diss_2).hPlane;
     var new_height = GameObject.Find("plane42").GetComponent(diss_2).new_height;
@@ -31,5 +30,4 @@ function Update () {
         }
         count--;
     }
-    //print("phase"+count);
 }

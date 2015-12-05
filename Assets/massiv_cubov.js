@@ -1,5 +1,4 @@
-﻿//var box : Transform;
-var mas : GameObject[];
+﻿var mas : GameObject[];
 var i = 0;
 var distX = 0;
 var distY = 0;
@@ -12,7 +11,6 @@ var dh = 0;
 var base_h = 0;
  
 function Update () { 
-    //var dist : float = Vector3.Distance(box.position, transform.position);
     base_h = GameObject.Find("plane42").GetComponent(diss_2).start_height;
     if (i < mas.length) {
         distX = mas[i].transform.position.x - transform.position.x; // расстояние по горизонтали
@@ -21,13 +19,8 @@ function Update () {
 
         new_height = base_h+mas[i].transform.position.y*100;
         dist = distX*200;
-
-        //print(dist);
-        //print("prepjadstvie "+new_height);
-        //dh = hPlane - new_height;
-        //vert_speed_r = dh * 240/3.6/dist;
-        //print("dh "+vert_speed_r);
     }
+
     stolk = GameObject.Find("plane42").GetComponent(Trigger).stolk;
 
     if (distX <=0) {
@@ -36,9 +29,6 @@ function Update () {
             score +=10;
         }
     }
-
-    //print(distX);
-    //print(distY);
     score = GameObject.Find("cursor").GetComponent(Rotate).score;
 }
 

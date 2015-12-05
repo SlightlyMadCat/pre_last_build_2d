@@ -11,8 +11,6 @@ var k = 0.111; //коэфициент на шкале вариометра
 var max_time = 300;
 var fall = false;
 var last = 0;
-//var mas=[2000,3000,3900,2000,3800,3300,2500,2100,3400];
-//var i = 0;
 var new_height = 0;
 var vyr : float;
 var zero = true;
@@ -27,13 +25,9 @@ function OnMouseDown(){
     pos = Input.mousePosition - pos;
     baseAngle = Mathf.Atan2(pos.y, pos.x) * Mathf.Rad2Deg;
     baseAngle -= Mathf.Atan2(transform.right.y, transform.right.x) *Mathf.Rad2Deg;
-    //print("najal strelku");
 
     if (timer_on == false && fall == false) {
         timer_on = true;
-        //timer = 0;
-        //GameObject.Find("plane42").GetComponent(diss_2).fall = true;
-        //getCords();
     }
 }
 
@@ -55,16 +49,6 @@ function OnMouseDrag(){
     }
 }
 
-/*function delay_time() {
-    td++;
-    if (td == 100){
-        delay = false;
-        td = 0;
-    }
-    //print(td);
-    print("delay here"+delay);
-}*/
-
 function Update() {
     fall = GameObject.Find("plane42").GetComponent(diss_2).fall;
     cur_vy = rot_angle*k;
@@ -75,25 +59,18 @@ function Update() {
 
     if (timer >= max_time) {
         timer_on = false;
-        //delay = true;
         timer = 0;
         GameObject.Find("plane42").GetComponent(diss_2).speed = 0.2;
         GameObject.Find("plane42").GetComponent(diss_2).fall = true;
         calculateSpeed();
 
-        //if (vyr > 0) {
-        //real_vert_speed = vyr/200;  
         real_vert_speed = cur_vy/200; 
-       // } else if (vyr < 0) {
-         //   real_vert_speed = vyr/200;
-       // }
-        
+
         GameObject.Find("plane42").GetComponent(diss_2).vSpeed = real_vert_speed;
         print(real_vert_speed);
     }
 
     if (timer_on == false && fall == false) {
-        //print(rot_angle);
         if (rot_angle > 0 && zero == false) {
             transform.rotation = Quaternion.AngleAxis(rot_angle, Vector3.back); 
             rot_angle--;
@@ -115,7 +92,6 @@ function OnGUI() {
     last = max_time - timer;
     GUI.Label(new Rect(Screen.width/2-1.5*Screen.width/5,40,500,30), "Time: "+last);
     GUI.Label(new Rect(Screen.width/2-1.5*Screen.width/4,70,500,30), "Расчетная Vy: "+vyr+" Реальная Vy: "+cur_vy);
-    //GUI.Label(new Rect(Screen.width/2-1.5*Screen.width/4,100,500,30), "Score: "+score);
 }
 
 function calculateSpeed() {
@@ -158,6 +134,4 @@ function calculateSpeed() {
         score += vyr/cur_vy*10;
         print("s "+vyr/cur_vy*10);
     } 
-
-    //print("score "+score);
 }
