@@ -1,0 +1,335 @@
+fileFormatVersion: 2
+guid: ed02581c9e20026458c1d6187bd45bfb
+timeCreated: 1448682028
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: backgraund
+    100002: BezierCurve
+    100004: Camera
+    100006: center circle rotate
+    100008: circle frofile
+    100010: citcle with razmetka
+    100012: Cube
+    100014: Cube.001
+    100016: Cube.002
+    100018: Cube.003
+    100020: face
+    100022: halfcircle1
+    100024: halfcircle2
+    100026: Plane
+    100028: Plane.001
+    100030: Plane.002
+    100032: Plane.003
+    100034: Plane.004
+    100036: Plane.005
+    100038: Plane.006
+    100040: Plane.007
+    100042: Plane.008
+    100044: Plane.009
+    100046: Plane.010
+    100048: Plane.024
+    100050: Plane.025
+    100052: Plane.026
+    100054: Plane.027
+    100056: Plane.028
+    100058: Plane.029
+    100060: Plane.030
+    100062: Plane.031
+    100064: Plane.032
+    100066: Plane.033
+    100068: Plane.034
+    100070: Plane.035
+    100072: Plane.036
+    100074: rotate
+    100076: Sphere.001
+    100078: Sphere.002
+    100080: Sphere.003
+    100082: Sphere.004
+    100084: Sun
+    100086: Text
+    100088: Text.001
+    100090: Text.002
+    100092: Text.003
+    100094: Text.004
+    100096: Text.005
+    100098: Text.006
+    100100: Text.007
+    100102: "\u0411\u043E\u043B\u044C\u0448\u0430\u044F \u0440\u0430\u043C\u043A\u0430"
+    100104: //RootNode
+    100106: "\u043F\u0440\u043E\u0444\u0438\u043B\u044C \u043F\u043E\u043B\u0443\u043A\u043E\u043B\u044C\u0446\u0430"
+    100108: "\u043F\u0440\u043E\u0444\u0438\u043B\u044C \u043F\u043E\u043B\u0443\u043A\u0440\u0443\u0433\u0430
+      1"
+    100110: "\u043F\u0440\u043E\u0444\u0438\u043B\u044C \u0440\u0430\u043C\u043A\u0438"
+    400000: backgraund
+    400002: BezierCurve
+    400004: Camera
+    400006: center circle rotate
+    400008: circle frofile
+    400010: citcle with razmetka
+    400012: Cube
+    400014: Cube.001
+    400016: Cube.002
+    400018: Cube.003
+    400020: face
+    400022: halfcircle1
+    400024: halfcircle2
+    400026: Plane
+    400028: Plane.001
+    400030: Plane.002
+    400032: Plane.003
+    400034: Plane.004
+    400036: Plane.005
+    400038: Plane.006
+    400040: Plane.007
+    400042: Plane.008
+    400044: Plane.009
+    400046: Plane.010
+    400048: Plane.024
+    400050: Plane.025
+    400052: Plane.026
+    400054: Plane.027
+    400056: Plane.028
+    400058: Plane.029
+    400060: Plane.030
+    400062: Plane.031
+    400064: Plane.032
+    400066: Plane.033
+    400068: Plane.034
+    400070: Plane.035
+    400072: Plane.036
+    400074: rotate
+    400076: Sphere.001
+    400078: Sphere.002
+    400080: Sphere.003
+    400082: Sphere.004
+    400084: Sun
+    400086: Text
+    400088: Text.001
+    400090: Text.002
+    400092: Text.003
+    400094: Text.004
+    400096: Text.005
+    400098: Text.006
+    400100: Text.007
+    400102: "\u0411\u043E\u043B\u044C\u0448\u0430\u044F \u0440\u0430\u043C\u043A\u0430"
+    400104: //RootNode
+    400106: "\u043F\u0440\u043E\u0444\u0438\u043B\u044C \u043F\u043E\u043B\u0443\u043A\u043E\u043B\u044C\u0446\u0430"
+    400108: "\u043F\u0440\u043E\u0444\u0438\u043B\u044C \u043F\u043E\u043B\u0443\u043A\u0440\u0443\u0433\u0430
+      1"
+    400110: "\u043F\u0440\u043E\u0444\u0438\u043B\u044C \u0440\u0430\u043C\u043A\u0438"
+    2300000: BezierCurve
+    2300002: circle frofile
+    2300004: Cube
+    2300006: Cube.001
+    2300008: Cube.002
+    2300010: Cube.003
+    2300012: halfcircle1
+    2300014: halfcircle2
+    2300016: Plane
+    2300018: Plane.001
+    2300020: Plane.002
+    2300022: Plane.003
+    2300024: Plane.004
+    2300026: Plane.005
+    2300028: Plane.006
+    2300030: Plane.007
+    2300032: Plane.008
+    2300034: Plane.009
+    2300036: Plane.010
+    2300038: Plane.024
+    2300040: Plane.025
+    2300042: Plane.026
+    2300044: Plane.027
+    2300046: Plane.028
+    2300048: Plane.029
+    2300050: Plane.030
+    2300052: Plane.031
+    2300054: Plane.032
+    2300056: Plane.033
+    2300058: Plane.034
+    2300060: Plane.035
+    2300062: Plane.036
+    2300064: rotate
+    2300066: Sphere.001
+    2300068: Sphere.002
+    2300070: Sphere.003
+    2300072: Sphere.004
+    2300074: Text
+    2300076: Text.001
+    2300078: Text.002
+    2300080: Text.003
+    2300082: Text.004
+    2300084: Text.005
+    2300086: Text.006
+    2300088: Text.007
+    2300090: "\u0411\u043E\u043B\u044C\u0448\u0430\u044F \u0440\u0430\u043C\u043A\u0430"
+    2300092: "\u043F\u0440\u043E\u0444\u0438\u043B\u044C \u043F\u043E\u043B\u0443\u043A\u043E\u043B\u044C\u0446\u0430"
+    2300094: "\u043F\u0440\u043E\u0444\u0438\u043B\u044C \u043F\u043E\u043B\u0443\u043A\u0440\u0443\u0433\u0430
+      1"
+    2300096: "\u043F\u0440\u043E\u0444\u0438\u043B\u044C \u0440\u0430\u043C\u043A\u0438"
+    3300000: BezierCurve
+    3300002: circle frofile
+    3300004: Cube
+    3300006: Cube.001
+    3300008: Cube.002
+    3300010: Cube.003
+    3300012: halfcircle1
+    3300014: halfcircle2
+    3300016: Plane
+    3300018: Plane.001
+    3300020: Plane.002
+    3300022: Plane.003
+    3300024: Plane.004
+    3300026: Plane.005
+    3300028: Plane.006
+    3300030: Plane.007
+    3300032: Plane.008
+    3300034: Plane.009
+    3300036: Plane.010
+    3300038: Plane.024
+    3300040: Plane.025
+    3300042: Plane.026
+    3300044: Plane.027
+    3300046: Plane.028
+    3300048: Plane.029
+    3300050: Plane.030
+    3300052: Plane.031
+    3300054: Plane.032
+    3300056: Plane.033
+    3300058: Plane.034
+    3300060: Plane.035
+    3300062: Plane.036
+    3300064: rotate
+    3300066: Sphere.001
+    3300068: Sphere.002
+    3300070: Sphere.003
+    3300072: Sphere.004
+    3300074: Text
+    3300076: Text.001
+    3300078: Text.002
+    3300080: Text.003
+    3300082: Text.004
+    3300084: Text.005
+    3300086: Text.006
+    3300088: Text.007
+    3300090: "\u0411\u043E\u043B\u044C\u0448\u0430\u044F \u0440\u0430\u043C\u043A\u0430"
+    3300092: "\u043F\u0440\u043E\u0444\u0438\u043B\u044C \u043F\u043E\u043B\u0443\u043A\u043E\u043B\u044C\u0446\u0430"
+    3300094: "\u043F\u0440\u043E\u0444\u0438\u043B\u044C \u043F\u043E\u043B\u0443\u043A\u0440\u0443\u0433\u0430
+      1"
+    3300096: "\u043F\u0440\u043E\u0444\u0438\u043B\u044C \u0440\u0430\u043C\u043A\u0438"
+    4300000: rotate
+    4300002: Text
+    4300004: Text.007
+    4300006: Text.006
+    4300008: Text.005
+    4300010: Text.004
+    4300012: Text.003
+    4300014: Text.002
+    4300016: Text.001
+    4300018: Plane.008
+    4300020: Plane.007
+    4300022: Plane.006
+    4300024: Plane.005
+    4300026: Plane.004
+    4300028: Plane.003
+    4300030: Plane.002
+    4300032: Plane.001
+    4300034: Plane
+    4300036: Sphere.001
+    4300038: Plane.024
+    4300040: Plane.025
+    4300042: Plane.026
+    4300044: Plane.027
+    4300046: Plane.028
+    4300048: Plane.029
+    4300050: Plane.030
+    4300052: Plane.031
+    4300054: Plane.032
+    4300056: Plane.033
+    4300058: Plane.034
+    4300060: Plane.035
+    4300062: Plane.036
+    4300064: halfcircle1
+    4300066: halfcircle2
+    4300068: Cube
+    4300070: Sphere.002
+    4300072: Cube.002
+    4300074: Plane.009
+    4300076: Cube.001
+    4300078: Cube.003
+    4300080: "\u043F\u0440\u043E\u0444\u0438\u043B\u044C \u043F\u043E\u043B\u0443\u043A\u043E\u043B\u044C\u0446\u0430"
+    4300082: BezierCurve
+    4300084: "\u043F\u0440\u043E\u0444\u0438\u043B\u044C \u043F\u043E\u043B\u0443\u043A\u0440\u0443\u0433\u0430
+      1"
+    4300086: "\u043F\u0440\u043E\u0444\u0438\u043B\u044C \u0440\u0430\u043C\u043A\u0438"
+    4300088: "\u0411\u043E\u043B\u044C\u0448\u0430\u044F \u0440\u0430\u043C\u043A\u0430"
+    4300090: Sphere.003
+    4300092: Plane.010
+    4300094: Sphere.004
+    4300096: circle frofile
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

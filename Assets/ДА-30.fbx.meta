@@ -1,0 +1,413 @@
+fileFormatVersion: 2
+guid: 712419b17869a014f9e714adb5bddd7e
+timeCreated: 1448508679
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: "45 \u043B\u0435\u0432\u043E"
+    100002: "45 \u043F\u0440\u0430\u0432\u043E"
+    100004: Camera
+    100006: Cube
+    100008: Cube.001
+    100010: Cube.002
+    100012: Cube.003
+    100014: Cube.004
+    100016: Cube.005
+    100018: Cube.006
+    100020: Cube.007
+    100022: Cube.008
+    100024: Cube.009
+    100026: Cube.010
+    100028: Cube.011
+    100030: Cube.012
+    100032: Cube.013
+    100034: Cube.014
+    100036: Cube.015
+    100038: Cube.016
+    100040: Cube.017
+    100042: Cube.018
+    100044: Cube.019
+    100046: Cube.020
+    100048: Cube.021
+    100050: Cube.022
+    100052: Cube.023
+    100054: Cube.024
+    100056: Cube.025
+    100058: Cube.026
+    100060: Cube.027
+    100062: Cube.028
+    100064: Cube.029
+    100066: Cube.030
+    100068: Cube.031
+    100070: Cube.032
+    100072: Cube.033
+    100074: Cube.034
+    100076: Cube.035
+    100078: Cube.036
+    100080: Cube.037
+    100082: Cube.038
+    100084: Cube.039
+    100086: Cube.040
+    100088: Cube.041
+    100090: Cube.042
+    100092: Cube.043
+    100094: Cube.044
+    100096: Cube.045
+    100098: Cube.046
+    100100: Lamp
+    100102: Plane
+    100104: Sphere
+    100106: Text
+    100108: Text.001
+    100110: Text.002
+    100112: Text.003
+    100114: Text.004
+    100116: Text.005
+    100118: Text.006
+    100120: Text.007
+    100122: "\u0411\u043E\u043B\u044C\u0448\u0430\u044F \u0440\u0430\u043C\u043A\u0430"
+    100124: //RootNode
+    100126: "\u0431\u0435\u043B\u044B\u0439 \u0446\u0438\u0444"
+    100128: "\u0436\u0435\u043B\u0442\u044B\u0439 \u0446\u0438\u0444"
+    100130: "\u043F\u043E\u043B\u0443\u043A\u0440\u0443\u0433"
+    100132: "\u043F\u0440\u043E\u0444\u0438\u043B\u044C \u043F\u043E\u043B\u0443\u043A\u0440\u0443\u0433\u0430"
+    100134: "\u043F\u0440\u043E\u0444\u0438\u043B\u044C \u0440\u0430\u043C\u043A\u0438"
+    100136: "\u0441\u0440\u0435\u0434\u0438\u043D\u0430"
+    100138: "\u0441\u0442\u0440\u0435\u043B\u043A\u0430"
+    100140: "\u0444\u043E\u043D \u0446\u0438\u0444\u0435\u0440\u0431\u043B\u0430\u0442\u0430 "
+    100142: "\u0446\u0435\u043D\u0442\u0440 "
+    400000: "45 \u043B\u0435\u0432\u043E"
+    400002: "45 \u043F\u0440\u0430\u0432\u043E"
+    400004: Camera
+    400006: Cube
+    400008: Cube.001
+    400010: Cube.002
+    400012: Cube.003
+    400014: Cube.004
+    400016: Cube.005
+    400018: Cube.006
+    400020: Cube.007
+    400022: Cube.008
+    400024: Cube.009
+    400026: Cube.010
+    400028: Cube.011
+    400030: Cube.012
+    400032: Cube.013
+    400034: Cube.014
+    400036: Cube.015
+    400038: Cube.016
+    400040: Cube.017
+    400042: Cube.018
+    400044: Cube.019
+    400046: Cube.020
+    400048: Cube.021
+    400050: Cube.022
+    400052: Cube.023
+    400054: Cube.024
+    400056: Cube.025
+    400058: Cube.026
+    400060: Cube.027
+    400062: Cube.028
+    400064: Cube.029
+    400066: Cube.030
+    400068: Cube.031
+    400070: Cube.032
+    400072: Cube.033
+    400074: Cube.034
+    400076: Cube.035
+    400078: Cube.036
+    400080: Cube.037
+    400082: Cube.038
+    400084: Cube.039
+    400086: Cube.040
+    400088: Cube.041
+    400090: Cube.042
+    400092: Cube.043
+    400094: Cube.044
+    400096: Cube.045
+    400098: Cube.046
+    400100: Lamp
+    400102: Plane
+    400104: Sphere
+    400106: Text
+    400108: Text.001
+    400110: Text.002
+    400112: Text.003
+    400114: Text.004
+    400116: Text.005
+    400118: Text.006
+    400120: Text.007
+    400122: "\u0411\u043E\u043B\u044C\u0448\u0430\u044F \u0440\u0430\u043C\u043A\u0430"
+    400124: //RootNode
+    400126: "\u0431\u0435\u043B\u044B\u0439 \u0446\u0438\u0444"
+    400128: "\u0436\u0435\u043B\u0442\u044B\u0439 \u0446\u0438\u0444"
+    400130: "\u043F\u043E\u043B\u0443\u043A\u0440\u0443\u0433"
+    400132: "\u043F\u0440\u043E\u0444\u0438\u043B\u044C \u043F\u043E\u043B\u0443\u043A\u0440\u0443\u0433\u0430"
+    400134: "\u043F\u0440\u043E\u0444\u0438\u043B\u044C \u0440\u0430\u043C\u043A\u0438"
+    400136: "\u0441\u0440\u0435\u0434\u0438\u043D\u0430"
+    400138: "\u0441\u0442\u0440\u0435\u043B\u043A\u0430"
+    400140: "\u0444\u043E\u043D \u0446\u0438\u0444\u0435\u0440\u0431\u043B\u0430\u0442\u0430 "
+    400142: "\u0446\u0435\u043D\u0442\u0440 "
+    2300000: "45 \u043B\u0435\u0432\u043E"
+    2300002: "45 \u043F\u0440\u0430\u0432\u043E"
+    2300004: Cube
+    2300006: Cube.001
+    2300008: Cube.002
+    2300010: Cube.003
+    2300012: Cube.004
+    2300014: Cube.005
+    2300016: Cube.006
+    2300018: Cube.007
+    2300020: Cube.008
+    2300022: Cube.009
+    2300024: Cube.010
+    2300026: Cube.011
+    2300028: Cube.012
+    2300030: Cube.013
+    2300032: Cube.014
+    2300034: Cube.015
+    2300036: Cube.016
+    2300038: Cube.017
+    2300040: Cube.018
+    2300042: Cube.019
+    2300044: Cube.020
+    2300046: Cube.021
+    2300048: Cube.022
+    2300050: Cube.023
+    2300052: Cube.024
+    2300054: Cube.025
+    2300056: Cube.026
+    2300058: Cube.027
+    2300060: Cube.028
+    2300062: Cube.029
+    2300064: Cube.030
+    2300066: Cube.031
+    2300068: Cube.032
+    2300070: Cube.033
+    2300072: Cube.034
+    2300074: Cube.035
+    2300076: Cube.036
+    2300078: Cube.037
+    2300080: Cube.038
+    2300082: Cube.039
+    2300084: Cube.040
+    2300086: Cube.041
+    2300088: Cube.042
+    2300090: Cube.043
+    2300092: Cube.044
+    2300094: Cube.045
+    2300096: Cube.046
+    2300098: Plane
+    2300100: Sphere
+    2300102: Text
+    2300104: Text.001
+    2300106: Text.002
+    2300108: Text.003
+    2300110: Text.004
+    2300112: Text.005
+    2300114: Text.006
+    2300116: Text.007
+    2300118: "\u0411\u043E\u043B\u044C\u0448\u0430\u044F \u0440\u0430\u043C\u043A\u0430"
+    2300120: "\u043F\u043E\u043B\u0443\u043A\u0440\u0443\u0433"
+    2300122: "\u043F\u0440\u043E\u0444\u0438\u043B\u044C \u043F\u043E\u043B\u0443\u043A\u0440\u0443\u0433\u0430"
+    2300124: "\u043F\u0440\u043E\u0444\u0438\u043B\u044C \u0440\u0430\u043C\u043A\u0438"
+    2300126: "\u0441\u0440\u0435\u0434\u0438\u043D\u0430"
+    2300128: "\u0444\u043E\u043D \u0446\u0438\u0444\u0435\u0440\u0431\u043B\u0430\u0442\u0430 "
+    2300130: "\u0446\u0435\u043D\u0442\u0440 "
+    3300000: "45 \u043B\u0435\u0432\u043E"
+    3300002: "45 \u043F\u0440\u0430\u0432\u043E"
+    3300004: Cube
+    3300006: Cube.001
+    3300008: Cube.002
+    3300010: Cube.003
+    3300012: Cube.004
+    3300014: Cube.005
+    3300016: Cube.006
+    3300018: Cube.007
+    3300020: Cube.008
+    3300022: Cube.009
+    3300024: Cube.010
+    3300026: Cube.011
+    3300028: Cube.012
+    3300030: Cube.013
+    3300032: Cube.014
+    3300034: Cube.015
+    3300036: Cube.016
+    3300038: Cube.017
+    3300040: Cube.018
+    3300042: Cube.019
+    3300044: Cube.020
+    3300046: Cube.021
+    3300048: Cube.022
+    3300050: Cube.023
+    3300052: Cube.024
+    3300054: Cube.025
+    3300056: Cube.026
+    3300058: Cube.027
+    3300060: Cube.028
+    3300062: Cube.029
+    3300064: Cube.030
+    3300066: Cube.031
+    3300068: Cube.032
+    3300070: Cube.033
+    3300072: Cube.034
+    3300074: Cube.035
+    3300076: Cube.036
+    3300078: Cube.037
+    3300080: Cube.038
+    3300082: Cube.039
+    3300084: Cube.040
+    3300086: Cube.041
+    3300088: Cube.042
+    3300090: Cube.043
+    3300092: Cube.044
+    3300094: Cube.045
+    3300096: Cube.046
+    3300098: Plane
+    3300100: Sphere
+    3300102: Text
+    3300104: Text.001
+    3300106: Text.002
+    3300108: Text.003
+    3300110: Text.004
+    3300112: Text.005
+    3300114: Text.006
+    3300116: Text.007
+    3300118: "\u0411\u043E\u043B\u044C\u0448\u0430\u044F \u0440\u0430\u043C\u043A\u0430"
+    3300120: "\u043F\u043E\u043B\u0443\u043A\u0440\u0443\u0433"
+    3300122: "\u043F\u0440\u043E\u0444\u0438\u043B\u044C \u043F\u043E\u043B\u0443\u043A\u0440\u0443\u0433\u0430"
+    3300124: "\u043F\u0440\u043E\u0444\u0438\u043B\u044C \u0440\u0430\u043C\u043A\u0438"
+    3300126: "\u0441\u0440\u0435\u0434\u0438\u043D\u0430"
+    3300128: "\u0444\u043E\u043D \u0446\u0438\u0444\u0435\u0440\u0431\u043B\u0430\u0442\u0430 "
+    3300130: "\u0446\u0435\u043D\u0442\u0440 "
+    4300000: Sphere
+    4300002: Text.007
+    4300004: Text.006
+    4300006: Text.005
+    4300008: Text.004
+    4300010: Text.003
+    4300012: Text.002
+    4300014: Text.001
+    4300016: Text
+    4300018: Plane
+    4300020: "\u0446\u0435\u043D\u0442\u0440 "
+    4300022: "45 \u043F\u0440\u0430\u0432\u043E"
+    4300024: "45 \u043B\u0435\u0432\u043E"
+    4300026: Cube.046
+    4300028: Cube.045
+    4300030: Cube.044
+    4300032: Cube.043
+    4300034: Cube.042
+    4300036: Cube.041
+    4300038: Cube.040
+    4300040: Cube.039
+    4300042: Cube.038
+    4300044: Cube.037
+    4300046: Cube.036
+    4300048: Cube.035
+    4300050: Cube.034
+    4300052: Cube.033
+    4300054: Cube.032
+    4300056: Cube.031
+    4300058: Cube.030
+    4300060: Cube.029
+    4300062: Cube.028
+    4300064: Cube.027
+    4300066: Cube.026
+    4300068: Cube.025
+    4300070: Cube.024
+    4300072: Cube.023
+    4300074: Cube.022
+    4300076: Cube.021
+    4300078: Cube.020
+    4300080: Cube.019
+    4300082: Cube.018
+    4300084: Cube.017
+    4300086: Cube.016
+    4300088: Cube.015
+    4300090: Cube.014
+    4300092: Cube.013
+    4300094: Cube.012
+    4300096: Cube.011
+    4300098: Cube.010
+    4300100: Cube.009
+    4300102: Cube.008
+    4300104: Cube.007
+    4300106: Cube.006
+    4300108: Cube.005
+    4300110: Cube.004
+    4300112: Cube.003
+    4300114: Cube.002
+    4300116: Cube.001
+    4300118: Cube
+    4300120: "\u043F\u043E\u043B\u0443\u043A\u0440\u0443\u0433"
+    4300122: "\u043F\u0440\u043E\u0444\u0438\u043B\u044C \u043F\u043E\u043B\u0443\u043A\u0440\u0443\u0433\u0430"
+    4300124: "\u0441\u0440\u0435\u0434\u0438\u043D\u0430"
+    4300126: "\u0444\u043E\u043D \u0446\u0438\u0444\u0435\u0440\u0431\u043B\u0430\u0442\u0430 "
+    4300128: "\u043F\u0440\u043E\u0444\u0438\u043B\u044C \u0440\u0430\u043C\u043A\u0438"
+    4300130: "\u0411\u043E\u043B\u044C\u0448\u0430\u044F \u0440\u0430\u043C\u043A\u0430"
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
