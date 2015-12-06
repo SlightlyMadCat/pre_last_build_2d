@@ -147,7 +147,40 @@ function OnGUI() {
     GUI.DrawTexture(Rect(Screen.width/2-100,0,200,200),air_speed);
     GUI.DrawTexture(Rect(Screen.width/2+100,0,200,200),altmetr);
 
-    speedFactor = speed/1.852/260*2000;
+    //speedFactor = speed/1.852/260*2000;
+
+    if (hPlane > 1200 && hPlane < 2400) {
+        if (speedFactor >= 560/1.852/400) {
+            speedFactor -= 0.005;
+        } else {
+            speedFactor += 0.005;
+        }
+	} else if (hPlane >=2400 && hPlane < 4200) {
+	    if (speedFactor >= 580/1.852/400) {
+	        speedFactor -= 0.005;
+	    } else {
+	        speedFactor += 0.005;
+	    }
+	} else if (hPlane >= 4200 && hPlane < 6600) {
+	    if (speedFactor >= 660/1.852/400) {
+	        speedFactor -= 0.005;
+	    } else {
+	        speedFactor += 0.005;
+	    }
+	} else if (hPlane >= 6600 && hPlane < 9000) {
+	    if (speedFactor >= 700/1.852/400) {
+	        speedFactor -= 0.005;
+	    } else {
+	        speedFactor += 0.005;
+	    }
+	} else if (hPlane >=9000 && hPlane <= 9100) {
+	    if (speedFactor >= 710/1.852/400) {
+	        speedFactor -= 0.005;
+	    } else {
+	        speedFactor += 0.005;
+	    }
+	}
+
     rotation_angle_1 = Mathf.Lerp(0,360,speedFactor);
 
     pivotPoint = Vector2(Screen.width/2,100);
