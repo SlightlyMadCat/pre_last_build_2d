@@ -17,7 +17,7 @@ function Update () {
         distY = mas[i].transform.position.y - transform.position.y; //расстояние по вертикали
         var hPlane = GameObject.Find("plane42").GetComponent(diss_2).hPlane;
 
-        new_height = base_h+mas[i].transform.position.y*100;
+        new_height = base_h+mas[i].transform.position.y*150;
         dist = distX*200;
     }
 

@@ -65,7 +65,7 @@ function Update () {
     }
 
     width = this.transform.position.x;	
-    hPlane = start_height + this.transform.position.y*100; 
+    hPlane = start_height + this.transform.position.y*150; 
 
     this.transform.position.x+=speed;
 
@@ -117,7 +117,7 @@ function Update () {
                 break;
             case 3:
                 //print ("phase3");
-                if (ugol > 2) {
+                if (ugol > 3) {
                 	if (hPlane > new_height) {
                 	    this.transform.Rotate(Vector3.left * Time.deltaTime*5); 
                 	    ugol-=5;
