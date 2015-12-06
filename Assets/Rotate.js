@@ -91,7 +91,7 @@ function Update() {
 function OnGUI() {
     last = max_time - timer;
     GUI.Label(new Rect(Screen.width/2-1.5*Screen.width/5,40,500,30), "Time: "+last);
-    GUI.Label(new Rect(Screen.width/2-1.5*Screen.width/4,70,500,30), "Расчетная Vy: "+vyr+" Реальная Vy: "+cur_vy);
+    GUI.Label(new Rect(Screen.width/2-1.5*Screen.width/4,70,500,30), "Calculated Vy: "+vyr+" Real Vy: "+cur_vy);
 }
 
 function calculateSpeed() {
