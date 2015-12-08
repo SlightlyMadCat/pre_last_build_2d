@@ -10,7 +10,7 @@ function Start () {
     print(Screen.height);
     print(Screen.width);
 
-    var scale : float;
+    /*var scale : float;
     scale  = Screen.width/349f;
 
     GameObject.Find("variometr").transform.localScale.x=scale;
@@ -22,5 +22,5 @@ function Start () {
     GameObject.Find("Aviahor").transform.localScale.z=scale;
 
     var m = GameObject.Find("variometr").transform.localScale;
-    print(m);
+    print(m);*/
 }

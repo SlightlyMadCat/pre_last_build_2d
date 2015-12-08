@@ -67,7 +67,6 @@ function Update() {
         real_vert_speed = cur_vy/200; 
 
         GameObject.Find("plane42").GetComponent(diss_2).vSpeed = real_vert_speed;
-        print(real_vert_speed);
     }
 
     if (timer_on == false && fall == false) {
@@ -91,7 +90,7 @@ function Update() {
 function OnGUI() {
     last = max_time - timer;
     GUI.Label(new Rect(Screen.width/2-1.5*Screen.width/5,40,500,30), "Time: "+last);
-    GUI.Label(new Rect(Screen.width/2-1.5*Screen.width/4,70,500,30), "Calculated Vy: "+vyr+" Real Vy: "+cur_vy);
+    GUI.Label(new Rect(Screen.width/2-1.5*Screen.width/4,70,500,30), "Calculated Vy: "+Mathf.Round(vyr * 100)/100+"     Real Vy: "+Mathf.Round(cur_vy * 100)/100);
 }
 
 function calculateSpeed() {
@@ -101,37 +100,45 @@ function calculateSpeed() {
     dh = hPlane - new_height;
 
     if (cur_vy > 0 && new_height+500 <= 9000) {
-        new_height+=1000;
+        new_height+=1200;
     } else if (cur_vy < 0 && new_height-500 >= 2000) {
-        new_height-=1000;   
+        new_height-=1200;   
     }
 
     GameObject.Find("plane42").GetComponent(diss_2).new_height = new_height;
     dh = hPlane - new_height;
 
-    if (dh < 0) {
-        dh = -dh;
+    if (Mathf.Abs(cur_vy) >=1 ) {
+        if (cur_vy > 0 && dh > 0) {
+            GameObject.Find("plane42").GetComponent(diss_2).fall = false;  
+            print("otboi");
+        } else if (cur_vy < 0 && dh < 0) {
+            GameObject.Find("plane42").GetComponent(diss_2).fall = false;
+            print("otboi");
+        } else {
+            if (dh < 0) {
+                dh = -dh;
+            }
+
+            vyr = dh * 240/3.6/dist;
+
+            if (hPlane < new_height) {
+                vyr = dh * 240/3.6/dist;
+            } else if (hPlane > new_height) {
+                vyr = dh * 240/3.6/dist;
+                vyr = -vyr;
+            }
+
+            var mVYR = Mathf.Abs(vyr);
+            var mCUR = Mathf.Abs(cur_vy);
+
+            if (mVYR >= mCUR) {
+                score += cur_vy/vyr*10;
+            } else if (mVYR < mCUR){
+                score += vyr/cur_vy*10;
+            }     
+        }
+    } else {
+        GameObject.Find("plane42").GetComponent(diss_2).fall = false;  
     }
-
-    vyr = dh * 240/3.6/dist;
-
-    if (hPlane < new_height) {
-        vyr = dh * 240/3.6/dist;
-    } else if (hPlane > new_height) {
-        vyr = dh * 240/3.6/dist;
-        vyr = -vyr;
-    }
-
-    print("dist "+dist);
-
-    var mVYR = Mathf.Abs(vyr);
-    var mCUR = Mathf.Abs(cur_vy);
-
-    if (mVYR >= mCUR) {
-        score += cur_vy/vyr*10;
-        print("s "+cur_vy/vyr*10);
-    } else if (mVYR < mCUR){
-        score += vyr/cur_vy*10;
-        print("s "+vyr/cur_vy*10);
-    } 
 }

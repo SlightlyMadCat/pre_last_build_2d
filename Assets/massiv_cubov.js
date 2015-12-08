@@ -28,6 +28,7 @@ function Update () {
         if (stolk == false && i < mas.length) {
             score +=10;
         }
+        print(i);
     }
     score = GameObject.Find("cursor").GetComponent(Rotate).score;
 }

@@ -22,12 +22,13 @@ function Update () {
             this.transform.position.y -= 0.008; 
         }
         count++;
-    } else if (phase !=1 && phase !=2 && count >= 0) {
+    } else if (phase ==3 || count > 0) {
         if (hPlane > new_height){
             this.transform.position.y -= 0.008;
         } else {
             this.transform.position.y += 0.008; 
         }
         count--;
+        //print(count);
     }
 }

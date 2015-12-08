@@ -1,16 +1,10 @@
 ﻿#pragma strict
 
- var w:float = 0;	//скорость ветра
- var v:float = 0;	//скорость самолета
- var vs:float = 0;	//скорость ветра
- var us:float = 0;	//угол сноса
- var width: float = 0; //х координата
- var speed : float;
- var angle : float; 
- var vSpeed : float;
+ var speed = 0.2; //скорость горизонтального перемещения самолета 
+ var vSpeed = 0.01;	//вертикальная скорость
  var hPlane : float;
  var new_height : float = 0;    //изменение высоты
- var distance : float = 0;      //дистанция обнаружения
+ var distance = 1000;	//дистанция обнаружения - костыль для угла поворота
  var d : float = 0;             //диагональ
  var fall : boolean = false;
  var rotate_angle : float = 0;
@@ -45,28 +39,14 @@
  var yoba_angle = 0; //угол поворота стрелки вариометра
  var current_vert = 0; //текущая вертикальная скорость
  var timer = false;
+ var k_screen : float;
 
 function Start () { //тестовые значения
-    w = 10; //скорость ветра
-    angle = 37;	//угол под которым дуют ветер
-    speed = 0.2; //скорость горизонтального перемещения самолета 
-    vSpeed = 0.01;	//вертикальная скорость
-    distance = 1000;	//дистанция обнаружения
-    new_height = 2200;	//новая высота самолета
-    v = 240; //условная скорость самолета
-    count = 1;	//счетчик угла
+    k_screen = Screen.height/4.4f; //разрешение экрана для корректного масштаба gui текстур
 }
 
 function Update () {
-    us = w/v*Mathf.Sin(angle);
-
-    if (us < 0) { // убираем минусовое значение угла
-        us = -us;
-    }
-
-    width = this.transform.position.x;	
     hPlane = start_height + this.transform.position.y*150; 
-
     this.transform.position.x+=speed;
 
     dif = hPlane - new_height; //выставляем диапазон высот
@@ -93,7 +73,7 @@ function Update () {
 
         switch (phase) {
             case 1:
-                //print ("phase1");
+                print ("phase1");
                 if (ugol < rotate_angle/10) {
                 	if (hPlane > new_height){
                     	this.transform.Rotate(Vector3.right * Time.deltaTime*5); 
@@ -109,15 +89,15 @@ function Update () {
                 }
                 break;
             case 2:
-                //print ("phase2 ");
+                print ("phase2 ");
                 if (dif > count+10) {
                 } else {
                     phase = 3;
                 }
                 break;
             case 3:
-                //print ("phase3");
-                if (ugol > 3) {
+                print ("phase3");
+                if (ugol > 1) {
                 	if (hPlane > new_height) {
                 	    this.transform.Rotate(Vector3.left * Time.deltaTime*5); 
                 	    ugol-=5;
@@ -126,12 +106,13 @@ function Update () {
                 	    ugol-=5;
                     }
                 } else {
-                    phase = 0;
-                    count = 0; 
-                    fall = false;
-                    vSpeed = 0;
-                    this.transform.rotation.x = 0;
-                    ugol = 0;
+                    gameOver();        
+                }
+
+                if (vSpeed < 0 && hPlane < new_height) {
+                    gameOver();
+                } else if (vSpeed > 0 && hPlane > new_height) {
+                    gameOver();
                 }
                 break;
             default:
@@ -141,40 +122,49 @@ function Update () {
     }
 }
 
+function gameOver() {
+    phase = 0;
+    count = 0; 
+    fall = false;
+    vSpeed = 0;
+    this.transform.rotation.x = 0;
+    ugol = 0;
+}
+
 function OnGUI() {
     var guiMatrix : Matrix4x4 = GUI.matrix;
 
-    GUI.DrawTexture(Rect(Screen.width/2-100,0,200,200),air_speed);
-    GUI.DrawTexture(Rect(Screen.width/2+100,0,200,200),altmetr);
+    GUI.DrawTexture(Rect(Screen.width/2-k_screen/2,0,k_screen,k_screen),air_speed);   //было 100,0,200,200
+    GUI.DrawTexture(Rect(Screen.width/2+k_screen/2,0,k_screen,k_screen),altmetr);
 
-    //speedFactor = speed/1.852/260*2000;
+    //меняем горизонтальную скорость на разных эшелонах
 
     if (hPlane > 1200 && hPlane < 2400) {
-        if (speedFactor >= 560/1.852/400) {
+        if (speedFactor >= 560/1.852/390) {
             speedFactor -= 0.005;
         } else {
             speedFactor += 0.005;
         }
 	} else if (hPlane >=2400 && hPlane < 4200) {
-	    if (speedFactor >= 580/1.852/400) {
+	    if (speedFactor >= 580/1.852/390) {
 	        speedFactor -= 0.005;
 	    } else {
 	        speedFactor += 0.005;
 	    }
 	} else if (hPlane >= 4200 && hPlane < 6600) {
-	    if (speedFactor >= 660/1.852/400) {
+	    if (speedFactor >= 660/1.852/390) {
 	        speedFactor -= 0.005;
 	    } else {
 	        speedFactor += 0.005;
 	    }
 	} else if (hPlane >= 6600 && hPlane < 9000) {
-	    if (speedFactor >= 700/1.852/400) {
+	    if (speedFactor >= 700/1.852/390) {
 	        speedFactor -= 0.005;
 	    } else {
 	        speedFactor += 0.005;
 	    }
 	} else if (hPlane >=9000 && hPlane <= 9100) {
-	    if (speedFactor >= 710/1.852/400) {
+	    if (speedFactor >= 710/1.852/390) {
 	        speedFactor -= 0.005;
 	    } else {
 	        speedFactor += 0.005;
@@ -183,10 +173,10 @@ function OnGUI() {
 
     rotation_angle_1 = Mathf.Lerp(0,360,speedFactor);
 
-    pivotPoint = Vector2(Screen.width/2,100);
+    pivotPoint = Vector2(Screen.width/2,k_screen/2);
     GUIUtility.RotateAroundPivot(curr_angle,pivotPoint);
 
-    GUI.DrawTexture(Rect(Screen.width/2-100,-30,200,200),air_speed_arrow);
+    GUI.DrawTexture(Rect(Screen.width/2-k_screen/2,-30,k_screen,k_screen),air_speed_arrow);
     GUI.matrix = guiMatrix;
 
     timer = GameObject.Find("cursor").GetComponent(Rotate).timer_on;
@@ -203,9 +193,9 @@ function OnGUI() {
 
     heightFactor = hPlane/10000; //9100 - топовая высота
     rotation_angle = Mathf.Lerp(0,360,heightFactor);
-    point_visotomer = Vector2(Screen.width/2+200,100);
+    point_visotomer = Vector2(Screen.width/2+k_screen, k_screen/2);
     GUIUtility.RotateAroundPivot(alt_angle,point_visotomer);
-    GUI.DrawTexture(Rect(Screen.width/2+100,-30,200,200),alt_long_arrow);
+    GUI.DrawTexture(Rect(Screen.width/2+k_screen/2,-30,k_screen,k_screen),alt_long_arrow);
 
     if (alt_angle < rotation_angle) {
         alt_angle += 1;
