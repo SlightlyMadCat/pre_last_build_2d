@@ -40,13 +40,14 @@
  var current_vert = 0; //текущая вертикальная скорость
  var timer = false;
  var k_screen : float;
+ //var max_vy = false; 
 
 function Start () { //тестовые значения
     k_screen = Screen.height/4.4f; //разрешение экрана для корректного масштаба gui текстур
 }
 
 function Update () {
-    hPlane = start_height + this.transform.position.y*150; 
+    hPlane = start_height + this.transform.position.y*120; 
     this.transform.position.x+=speed;
 
     dif = hPlane - new_height; //выставляем диапазон высот
@@ -54,9 +55,15 @@ function Update () {
     	dif = -dif;
     }
 
-	d = Mathf.Sqrt(dif*dif+distance*distance);
+    d = GameObject.Find("cursor").GetComponent(Rotate).dist;
 	rotate_angle = Mathf.Asin(dif/d)*Mathf.Rad2Deg;
 	yoba_angle = GameObject.Find("cursor").GetComponent(Rotate).rot_angle;
+	//max_vy = GameObject.Find("cursor").GetComponent(Rotate).max_vy;
+
+	if (GameObject.Find("cursor").GetComponent(Rotate).max_vy == true) {
+	    gameOver();
+	    GameObject.Find("plane42").GetComponent(diss_2).speed = 0;
+	}
 
     //МОДЕЛЬ ИЗМЕНЕНИЯ ВЫСОТЫ ПОЛЕТА
 
@@ -74,7 +81,7 @@ function Update () {
         switch (phase) {
             case 1:
                 print ("phase1");
-                if (ugol < rotate_angle/10) {
+                if (ugol < rotate_angle) {
                 	if (hPlane > new_height){
                     	this.transform.Rotate(Vector3.right * Time.deltaTime*5); 
                     	count += 2;
@@ -140,31 +147,31 @@ function OnGUI() {
     //меняем горизонтальную скорость на разных эшелонах
 
     if (hPlane > 1200 && hPlane < 2400) {
-        if (speedFactor >= 560/1.852/390) {
+        if (speedFactor >= 560/1.852/410) {
             speedFactor -= 0.005;
         } else {
             speedFactor += 0.005;
         }
 	} else if (hPlane >=2400 && hPlane < 4200) {
-	    if (speedFactor >= 580/1.852/390) {
+	    if (speedFactor >= 580/1.852/410) {
 	        speedFactor -= 0.005;
 	    } else {
 	        speedFactor += 0.005;
 	    }
 	} else if (hPlane >= 4200 && hPlane < 6600) {
-	    if (speedFactor >= 660/1.852/390) {
+	    if (speedFactor >= 660/1.852/410) {
 	        speedFactor -= 0.005;
 	    } else {
 	        speedFactor += 0.005;
 	    }
 	} else if (hPlane >= 6600 && hPlane < 9000) {
-	    if (speedFactor >= 700/1.852/390) {
+	    if (speedFactor >= 700/1.852/410) {
 	        speedFactor -= 0.005;
 	    } else {
 	        speedFactor += 0.005;
 	    }
 	} else if (hPlane >=9000 && hPlane <= 9100) {
-	    if (speedFactor >= 710/1.852/390) {
+	    if (speedFactor >= 710/1.852/410) {
 	        speedFactor -= 0.005;
 	    } else {
 	        speedFactor += 0.005;

@@ -9,6 +9,8 @@ var dist =  0;
 var vert_speed_r : float;
 var dh = 0;
 var base_h = 0;
+var gameOver = false;
+var n = 0;
  
 function Update () { 
     base_h = GameObject.Find("plane42").GetComponent(diss_2).start_height;
@@ -17,7 +19,7 @@ function Update () {
         distY = mas[i].transform.position.y - transform.position.y; //расстояние по вертикали
         var hPlane = GameObject.Find("plane42").GetComponent(diss_2).hPlane;
 
-        new_height = base_h+mas[i].transform.position.y*150;
+        new_height = base_h+mas[i].transform.position.y*120;
         dist = distX*200;
     }
 
@@ -28,11 +30,20 @@ function Update () {
         if (stolk == false && i < mas.length) {
             score +=10;
         }
-        print(i);
+        //print(i);
     }
     score = GameObject.Find("cursor").GetComponent(Rotate).score;
+
+    if (i == mas.length){
+        gameOver = true;
+        n = GameObject.Find("plane42").GetComponent(Trigger).i;
+    }
 }
 
 function OnGUI() {
-    GUI.Label(new Rect(Screen.width/2-1.5*Screen.width/4,40,500,30), "Score: "+score);
+    GUI.Label(new Rect(Screen.width/6.5,40,500,30), "Score: "+score);
+
+    if (gameOver == true){
+        GUI.Box ( new Rect(Screen.width/2 - 200,Screen.height/2 - 160,400,300), "You get "+score+" points of 100. "+n+" barriers touched.");
+    }
 }

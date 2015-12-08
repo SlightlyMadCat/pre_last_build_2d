@@ -43,7 +43,7 @@ public GameObject go;
 			Time.timeScale = 0;  
 			_paused = true; 
 			_window = 0;
-			}
+            }
 		else{  
 			Time.timeScale = 1;  
 			_paused = false;
@@ -65,7 +65,7 @@ public GameObject go;
 		if (GUI.Button ( new Rect(Screen.width/2 - 120,Screen.height/2 - 70,240,60), "Options")) { // Опции
             	_window = 1; // активируем окно "настройки" 
             }
-		if (GUI.Button ( new Rect(Screen.width/2 - 120,Screen.height/2 - 0,240,60), "Main menu")) { // Главное меню 
+		if (GUI.Button ( new Rect(Screen.width/2 - 120,Screen.height/2 - 0,240,60), "Restart Game")) { // Главное меню 
 				Time.timeScale = 1;  
 				_paused = false;
 				_window = 100;
