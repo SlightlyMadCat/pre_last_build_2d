@@ -11,7 +11,19 @@ var dh = 0;
 var base_h = 0;
 var gameOver = false;
 var n = 0;
- 
+
+function Start() {      //ГЕНЕРАТОР ОБЛАКОВ
+    var rand:float;
+
+    for (i=0;i<mas.length;i++){
+        rand = Random.Range(-15.5, 23.6);
+        print(rand);   //коордианта облаков по у
+        mas[i].transform.position.y = rand;
+    }
+
+    i=0;
+}
+
 function Update () { 
     base_h = GameObject.Find("plane42").GetComponent(diss_2).start_height;
     if (i < mas.length) {
@@ -20,6 +32,7 @@ function Update () {
         var hPlane = GameObject.Find("plane42").GetComponent(diss_2).hPlane;
 
         new_height = base_h+mas[i].transform.position.y*120;
+        print(new_height);
         dist = distX*200;
     }
 
@@ -41,9 +54,9 @@ function Update () {
 }
 
 function OnGUI() {
-    GUI.Label(new Rect(Screen.width/6.5,40,500,30), "Score: "+score);
+    GUI.Box(new Rect(Screen.width/6.5,40,150,30), "Score: "+Mathf.Round(score * 100)/100);
 
     if (gameOver == true){
-        GUI.Box ( new Rect(Screen.width/2 - 200,Screen.height/2 - 160,400,300), "You get "+score+" points of 100. "+n+" barriers touched.");
+        GUI.Box( new Rect(Screen.width/2 - 200,Screen.height/2 - 160,400,300), "You get "+score+" points of "+GameObject.Find("cursor").GetComponent(Rotate).count_clouds+". "+n+" barrier(s) touched.");
     }
 }

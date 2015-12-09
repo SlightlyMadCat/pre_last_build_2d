@@ -21,6 +21,7 @@ var real_vert_speed : float;
 var score : float = 0;
 var max_vy = false;
 var style : GUIStyle;
+var count_clouds = 0;
 
 function OnMouseDown(){
     var pos = Camera.main.WorldToScreenPoint(transform.position);
@@ -91,8 +92,9 @@ function Update() {
 
 function OnGUI() {
     last = max_time - timer;
-    GUI.Label(new Rect(Screen.width/6.5+120,40,500,30), "Time: "+last);
-    GUI.Label(new Rect(Screen.width/6.5,70,500,30), "Calculated Vy: "+Mathf.Round(vyr * 100)/100+"     Real Vy: "+Mathf.Round(cur_vy * 100)/100);
+    //GUI.Box(new Rect(Screen.width/6.5,40,150,30), "Score: "+Mathf.Round(score * 100)/100);
+    GUI.Box(new Rect(Screen.width/6.5+150,40,150,30), "Time: "+last);
+    GUI.Box(new Rect(Screen.width/6.5,70,300,30), "Calculated Vy: "+Mathf.Round(vyr * 100)/100+"     Real Vy: "+Mathf.Round(cur_vy * 100)/100);
 
     if (max_vy == true){
         GUI.Box ( new Rect(Screen.width/2 - 300,Screen.height/2,100,100), "Превышена допустимая вертикальная скорость!", style);
@@ -110,6 +112,7 @@ function calculateSpeed() {
     } else if (cur_vy < 0 && new_height-500 >= 2000) {
         new_height-=1200;   
     }
+    print(new_height);
 
     GameObject.Find("plane42").GetComponent(diss_2).new_height = new_height;
     dh = hPlane - new_height;
@@ -123,6 +126,7 @@ function calculateSpeed() {
             print("otboi");
         } else {
             GameObject.Find("Rotate").GetComponent(rot_vis).dh = dh;
+            count_clouds += 10;
 
             if (dh < 0) {
                 dh = -dh;

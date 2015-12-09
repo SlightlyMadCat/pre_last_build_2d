@@ -80,7 +80,7 @@ function Update () {
 
         switch (phase) {
             case 1:
-                print ("phase1");
+                //print ("phase1");
                 if (ugol < rotate_angle) {
                 	if (hPlane > new_height){
                     	this.transform.Rotate(Vector3.right * Time.deltaTime*5); 
@@ -96,14 +96,14 @@ function Update () {
                 }
                 break;
             case 2:
-                print ("phase2 ");
+                //print ("phase2 ");
                 if (dif > count+10) {
                 } else {
                     phase = 3;
                 }
                 break;
             case 3:
-                print ("phase3");
+                //print ("phase3");
                 if (ugol > 1) {
                 	if (hPlane > new_height) {
                 	    this.transform.Rotate(Vector3.left * Time.deltaTime*5); 
