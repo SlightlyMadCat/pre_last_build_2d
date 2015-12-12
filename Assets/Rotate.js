@@ -93,8 +93,9 @@ function Update() {
 function OnGUI() {
     last = max_time - timer;
     //GUI.Box(new Rect(Screen.width/6.5,40,150,30), "Score: "+Mathf.Round(score * 100)/100);
-    GUI.Box(new Rect(Screen.width/6.5+150,40,150,30), "Time: "+last);
-    GUI.Box(new Rect(Screen.width/6.5,70,300,30), "Calculated Vy: "+Mathf.Round(vyr * 100)/100+"     Real Vy: "+Mathf.Round(cur_vy * 100)/100);
+    GUI.Box(new Rect(Screen.width/6.5,70,150,30),"Time: "+last);
+    GUI.Box(new Rect(Screen.width/6.5,100,150,30),"Calculated Vy: "+Mathf.Round(vyr * 100)/100);
+    GUI.Box(new Rect(Screen.width/6.5,130,150,30),"Real Vy: "+Mathf.Round(cur_vy * 100)/100);
 
     if (max_vy == true){
         GUI.Box ( new Rect(Screen.width/2 - 300,Screen.height/2,100,100), "Превышена допустимая вертикальная скорость!", style);

@@ -13,7 +13,7 @@ var gameOver = false;
 var n = 0;
 
 function Start() {      //ГЕНЕРАТОР ОБЛАКОВ
-    var rand:float;
+    /*var rand:float;
 
     for (i=0;i<mas.length;i++){
         rand = Random.Range(-15.5, 23.6);
@@ -21,7 +21,7 @@ function Start() {      //ГЕНЕРАТОР ОБЛАКОВ
         mas[i].transform.position.y = rand;
     }
 
-    i=0;
+    i=0;*/
 }
 
 function Update () { 
