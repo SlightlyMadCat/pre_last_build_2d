@@ -1,6 +1,6 @@
 ﻿#pragma strict
 
- var speed = 0.2; //скорость горизонтального перемещения самолета 
+ var speed = 0f; //скорость горизонтального перемещения самолета 
  var vSpeed = 0.01;	//вертикальная скорость
  var hPlane : float;
  var new_height : float = 0;    //изменение высоты
@@ -40,7 +40,7 @@
  var current_vert = 0; //текущая вертикальная скорость
  var timer = false;
  var k_screen : float;
- //var max_vy = false; 
+ var start = false;
 
 function Start () { //тестовые значения
     k_screen = Screen.height/4.4f; //разрешение экрана для корректного масштаба gui текстур
@@ -48,7 +48,10 @@ function Start () { //тестовые значения
 
 function Update () {
     hPlane = start_height + this.transform.position.y*120; 
-    this.transform.position.x+=speed;
+
+    if (start == true){
+        this.transform.position.x+=speed;
+    }
 
     dif = hPlane - new_height; //выставляем диапазон высот
     if (dif < 0) {
@@ -141,42 +144,50 @@ function gameOver() {
 function OnGUI() {
     var guiMatrix : Matrix4x4 = GUI.matrix;
 
+    if (start == false){
+        if (GUI.Button (Rect (Screen.width/2 - 90,Screen.height/2 - 80,180,30), "Start")) { // наша кнопка 
+            start = true;
+            speed = 0.2;
+        } 
+    }
+
     GUI.DrawTexture(Rect(Screen.width/2-k_screen/2,0,k_screen,k_screen),air_speed);   //было 100,0,200,200
     GUI.DrawTexture(Rect(Screen.width/2+k_screen/2,0,k_screen,k_screen),altmetr);
 
     //меняем горизонтальную скорость на разных эшелонах
 
-    if (hPlane > 1200 && hPlane < 2400) {
-        if (speedFactor >= 560/1.852/410) {
-            speedFactor -= 0.005;
-        } else {
-            speedFactor += 0.005;
+    if(start == true){ 
+        if (hPlane > 1200 && hPlane < 2400) {
+            if (speedFactor >= 560/1.852/410) {
+                speedFactor -= 0.005;
+            } else {
+                speedFactor += 0.005;
+            }
+        } else if (hPlane >=2400 && hPlane < 4200) {
+            if (speedFactor >= 580/1.852/410) {
+                speedFactor -= 0.005;
+            } else {
+                speedFactor += 0.005;
+            }
+        } else if (hPlane >= 4200 && hPlane < 6600) {
+            if (speedFactor >= 660/1.852/410) {
+                speedFactor -= 0.005;
+            } else {
+                speedFactor += 0.005;
+            }
+        } else if (hPlane >= 6600 && hPlane < 9000) {
+            if (speedFactor >= 700/1.852/410) {
+                speedFactor -= 0.005;
+            } else {
+                speedFactor += 0.005;
+            }
+        } else if (hPlane >=9000 && hPlane <= 9100) {
+            if (speedFactor >= 710/1.852/410) {
+                speedFactor -= 0.005;
+            } else {
+                speedFactor += 0.005;
         }
-	} else if (hPlane >=2400 && hPlane < 4200) {
-	    if (speedFactor >= 580/1.852/410) {
-	        speedFactor -= 0.005;
-	    } else {
-	        speedFactor += 0.005;
-	    }
-	} else if (hPlane >= 4200 && hPlane < 6600) {
-	    if (speedFactor >= 660/1.852/410) {
-	        speedFactor -= 0.005;
-	    } else {
-	        speedFactor += 0.005;
-	    }
-	} else if (hPlane >= 6600 && hPlane < 9000) {
-	    if (speedFactor >= 700/1.852/410) {
-	        speedFactor -= 0.005;
-	    } else {
-	        speedFactor += 0.005;
-	    }
-	} else if (hPlane >=9000 && hPlane <= 9100) {
-	    if (speedFactor >= 710/1.852/410) {
-	        speedFactor -= 0.005;
-	    } else {
-	        speedFactor += 0.005;
-	    }
-	}
+    }
 
     rotation_angle_1 = Mathf.Lerp(0,360,speedFactor);
 
@@ -211,4 +222,5 @@ function OnGUI() {
     } 
      
     current_vert = GameObject.Find("cursor").GetComponent(Rotate).cur_vy;
+    }
 }
