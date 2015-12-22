@@ -155,8 +155,7 @@ function OnGUI() {
     GUI.DrawTexture(Rect(Screen.width/2+k_screen/2,0,k_screen,k_screen),altmetr);
 
     //меняем горизонтальную скорость на разных эшелонах
-
-    if(start == true){ 
+    if (start == true){
         if (hPlane > 1200 && hPlane < 2400) {
             if (speedFactor >= 560/1.852/410) {
                 speedFactor -= 0.005;
@@ -186,10 +185,20 @@ function OnGUI() {
                 speedFactor -= 0.005;
             } else {
                 speedFactor += 0.005;
+            }
         }
+    } else {
+        speedFactor = 660/1.852/410;
     }
 
     rotation_angle_1 = Mathf.Lerp(0,360,speedFactor);
+
+    //высталяем стрелки сразу при запуске программы
+    if (start == false){
+        alt_angle = rotation_angle;
+        curr_angle = rotation_angle_1;
+        print(rotation_angle_1);
+    }
 
     pivotPoint = Vector2(Screen.width/2,k_screen/2);
     GUIUtility.RotateAroundPivot(curr_angle,pivotPoint);
@@ -222,5 +231,4 @@ function OnGUI() {
     } 
      
     current_vert = GameObject.Find("cursor").GetComponent(Rotate).cur_vy;
-    }
 }

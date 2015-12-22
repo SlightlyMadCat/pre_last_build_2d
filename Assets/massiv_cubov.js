@@ -32,18 +32,21 @@ function Update () {
         var hPlane = GameObject.Find("plane42").GetComponent(diss_2).hPlane;
 
         new_height = base_h+mas[i].transform.position.y*120;
-        //print(new_height);
+
         dist = distX*200;
     }
 
     stolk = GameObject.Find("plane42").GetComponent(Trigger).stolk;
 
     if (distX <=0) {
-        i++;
-        if (stolk == false && i < mas.length) {
-            score +=10;
+        if (i+1 <= mas.length){
+            i++;
+            mas[i].transform.position.y = (hPlane-base_h)/120; //облако перед самолетом
+
+            if (stolk == false && i < mas.length) {
+                score +=10;
+            }
         }
-        //print(i);
     }
     score = GameObject.Find("cursor").GetComponent(Rotate).score;
 
@@ -57,6 +60,6 @@ function OnGUI() {
     GUI.Box(new Rect(70+Screen.width/10,Screen.height/22,150,30), "Score: "+Mathf.Round(score * 100)/100);
 
     if (gameOver == true){
-        GUI.Box( new Rect(Screen.width/2 - 200,Screen.height/2 - 160,400,300), "You get "+score+" points of "+GameObject.Find("cursor").GetComponent(Rotate).count_clouds+". "+n+" barrier(s) touched.");
+        GUI.Box( new Rect(Screen.width/2 - 200,Screen.height/2 - 160,400,300), "You get "+score+" points of 100. "+n+" barrier(s) touched.");
     }
 }
