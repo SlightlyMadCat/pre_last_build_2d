@@ -44,6 +44,7 @@ function Update () {
             i++;
             if (i+1 < mas.length){
                 mas[i].transform.position.y = (hPlane - base_h)/120;
+                print(mas[i].transform.position.y*120+base_h);
             }
         }
     }
