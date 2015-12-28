@@ -118,6 +118,13 @@ function calculateSpeed() {
     GameObject.Find("plane42").GetComponent(diss_2).new_height = new_height;
     dh = hPlane - new_height;
 
+    //ограничение по высоте
+    if (new_height < 2000){
+        GameObject.Find("plane42").GetComponent(diss_2).fall = false; 
+    } else if (new_height > 8000){
+        GameObject.Find("plane42").GetComponent(diss_2).fall = false; 
+    }
+
     if (Mathf.Abs(cur_vy) >=1 ) {
         if (cur_vy > 0 && dh > 0) {
             GameObject.Find("plane42").GetComponent(diss_2).fall = false;  
