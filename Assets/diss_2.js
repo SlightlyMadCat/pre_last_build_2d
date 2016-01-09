@@ -148,7 +148,15 @@ function OnGUI() {
         if (GUI.Button (Rect (Screen.width/2 - 90,Screen.height/2 - 80,180,30), "Start")) { // наша кнопка 
             start = true;
             speed = 0.2;
+
+            var audio : AudioSource = GetComponent.<AudioSource>(); //запускаем звук
+            audio.Play();
         } 
+
+        if (GUI.Button (Rect (Screen.width/2 - 90,Screen.height/2+50 - 80,180,30), "Tutorial")) {
+            print("tut");
+            Application.LoadLevel("tutorial");
+        }
     }
 
     GUI.DrawTexture(Rect(Screen.width/2-k_screen/2,0,k_screen,k_screen),air_speed);   //было 100,0,200,200
@@ -197,7 +205,7 @@ function OnGUI() {
     if (start == false){
         alt_angle = rotation_angle;
         curr_angle = rotation_angle_1;
-        print(rotation_angle_1);
+        //print(rotation_angle_1);
     }
 
     pivotPoint = Vector2(Screen.width/2,k_screen/2);
