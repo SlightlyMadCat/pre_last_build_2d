@@ -154,7 +154,7 @@ function OnGUI() {
         } 
 
         if (GUI.Button (Rect (Screen.width/2 - 90,Screen.height/2+50 - 80,180,30), "Tutorial")) {
-            print("tut");
+            //print("tut");
             Application.LoadLevel("tutorial");
         }
     }
