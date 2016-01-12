@@ -38,8 +38,17 @@ public GameObject go;
 	
 	// Ставим игру на паузу
 	if(Input.GetKeyUp(KeyCode.Escape)){
-			
-		if(!_paused){  
+            /*_paused = !_paused;
+            if (!_paused) {
+                Time.timeScale = 0;
+                _paused = true;
+                _window = 0;
+            } else {
+                Time.timeScale = 1;
+                _paused = false;
+                _window = 100;
+            }*/
+        if (!_paused){  
 			Time.timeScale = 0;  
 			_paused = true; 
 			_window = 0;
@@ -55,7 +64,7 @@ public GameObject go;
 	void  OnGUI (){ 
 					
 		if (_window == 0) { // Главное меню активировано при _window = 0 
-			GUI.Box ( new Rect(Screen.width/2 - 200,Screen.height/2 - 160,400,300), "Game menu");
+			GUI.Box ( new Rect(Screen.width/2 - 200,Screen.height/2 - 160,400,400), "Game menu");
 			
 		if (GUI.Button ( new Rect(Screen.width/2 - 120,Screen.height/2 - 140,240,60), "Continue")) { // Продолжить
     			Time.timeScale = 1;
@@ -69,11 +78,19 @@ public GameObject go;
 				Time.timeScale = 1;  
 				_paused = false;
 				_window = 100;
-            	Application.LoadLevel (0);   
-            } 
-		if (GUI.Button ( new Rect(Screen.width/2 - 120,Screen.height/2 + 70,240,60), "Exit game")) { // Выход из игры
+            	Application.LoadLevel ("try in 2D");   
+            }
+
+        if (GUI.Button(new Rect(Screen.width / 2 - 120, Screen.height / 2 + 70, 240, 60), "Main Menu")) { //main menu
+                Time.timeScale = 1;
+                _paused = false;
+                _window = 100;
+                Application.LoadLevel("main menu");
+        }
+
+        if (GUI.Button ( new Rect(Screen.width/2 - 120,Screen.height/2 + 140,240,60), "Exit game")) { // Выход из игры
             	Application.Quit(); 
-            } 
+        } 
 		}
 
 		// Настройки

@@ -61,5 +61,10 @@ function OnGUI() {
 
     if (gameOver == true){
         GUI.Box( new Rect(Screen.width/2 - 200,Screen.height/2 - 160,400,300), "You get "+score+" points of 100. "+n+" barrier(s) touched.");
+
+        if (GUI.Button (Rect (Screen.width/2 - 90,Screen.height/2 - 100,180,30), "Back to Main Menu")) {
+            Application.LoadLevel("main menu");
+        }
     }
+
 }

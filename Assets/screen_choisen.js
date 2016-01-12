@@ -42,6 +42,6 @@ function OnGUI() {
     } 
 
     if (GUI.Button (Rect (Screen.width/2 - 90,Screen.height/2+300 - 80,180,30), "Back to main menu")) {
-            Application.LoadLevel("try in 2D");
+            Application.LoadLevel("main menu");
         }
 }

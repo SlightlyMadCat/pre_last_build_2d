@@ -40,18 +40,17 @@
  var current_vert = 0; //текущая вертикальная скорость
  var timer = false;
  var k_screen : float;
- var start = false;
+ var start = true;
 
 function Start () { //тестовые значения
     k_screen = Screen.height/4.4f; //разрешение экрана для корректного масштаба gui текстур
+    speed = 0.2;
 }
 
 function Update () {
     hPlane = start_height + this.transform.position.y*120; 
 
-    if (start == true){
-        this.transform.position.x+=speed;
-    }
+    this.transform.position.x+=speed;
 
     dif = hPlane - new_height; //выставляем диапазон высот
     if (dif < 0) {
@@ -144,7 +143,7 @@ function gameOver() {
 function OnGUI() {
     var guiMatrix : Matrix4x4 = GUI.matrix;
 
-    if (start == false){
+    /*if (start == false){
         if (GUI.Button (Rect (Screen.width/2 - 90,Screen.height/2 - 80,180,30), "Start")) { // наша кнопка 
             start = true;
             speed = 0.2;
@@ -157,7 +156,7 @@ function OnGUI() {
             //print("tut");
             Application.LoadLevel("tutorial");
         }
-    }
+    }*/
 
     GUI.DrawTexture(Rect(Screen.width/2-k_screen/2,0,k_screen,k_screen),air_speed);   //было 100,0,200,200
     GUI.DrawTexture(Rect(Screen.width/2+k_screen/2,0,k_screen,k_screen),altmetr);
