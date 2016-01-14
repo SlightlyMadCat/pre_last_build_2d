@@ -63,8 +63,8 @@ function Update () {
 	//max_vy = GameObject.Find("cursor").GetComponent(Rotate).max_vy;
 
 	if (GameObject.Find("cursor").GetComponent(Rotate).max_vy == true) {
-	    gameOver();
-	    GameObject.Find("plane42").GetComponent(diss_2).speed = 0;
+	    //gameOver();
+	    //GameObject.Find("plane42").GetComponent(diss_2).speed = 0;
 	}
 
     //МОДЕЛЬ ИЗМЕНЕНИЯ ВЫСОТЫ ПОЛЕТА
@@ -83,7 +83,12 @@ function Update () {
         switch (phase) {
             case 1:
                 //print ("phase1");
-                if (ugol < rotate_angle) {
+                if (GameObject.Find("cursor").GetComponent(Rotate).max_vy == true) {
+                    if (ugol < rotate_angle) {
+                        this.transform.Rotate(Vector3.right * Time.deltaTime*5); 
+                        ugol+=1;
+                    }
+                } else if (ugol < rotate_angle) {
                 	if (hPlane > new_height){
                     	this.transform.Rotate(Vector3.right * Time.deltaTime*5); 
                     	count += 2;
@@ -100,6 +105,9 @@ function Update () {
             case 2:
                 //print ("phase2 ");
                 if (dif > count+10) {
+
+                } else if (GameObject.Find("cursor").GetComponent(Rotate).max_vy == true) {
+                    
                 } else {
                     phase = 3;
                 }

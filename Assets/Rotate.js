@@ -22,6 +22,11 @@ var score : float = 0;
 var max_vy = false;
 var style : GUIStyle;
 var count_clouds = 0;
+var fire : ParticleSystem;
+
+function Start() {
+    //fire.Play();
+}
 
 function OnMouseDown(){
     var pos = Camera.main.WorldToScreenPoint(transform.position);
@@ -68,8 +73,16 @@ function Update() {
         calculateSpeed();
 
         real_vert_speed = cur_vy/200; 
+        if (max_vy != true) {
+            GameObject.Find("plane42").GetComponent(diss_2).vSpeed = real_vert_speed;
+        } else {
+            if (real_vert_speed < 0) {
+                GameObject.Find("plane42").GetComponent(diss_2).vSpeed = real_vert_speed;
+            } else {
+                GameObject.Find("plane42").GetComponent(diss_2).vSpeed = -real_vert_speed;
+            }
+        }
 
-        GameObject.Find("plane42").GetComponent(diss_2).vSpeed = real_vert_speed;
     }
 
     if (timer_on == false && fall == false) {
@@ -98,7 +111,7 @@ function OnGUI() {
     GUI.Box(new Rect(70+Screen.width/10,Screen.height/22+90,150,30),"Real Vy: "+Mathf.Round(cur_vy * 100)/100);
 
     if (max_vy == true){
-        GUI.Box ( new Rect(Screen.width/2 - 300,Screen.height/2,100,100), "Превышена допустимая вертикальная скорость!", style);
+        GUI.Box ( new Rect(Screen.width/2 - 300,Screen.height/2,100,100), "Здесь будет финишный экран", style);
     }
 }
 
@@ -164,5 +177,6 @@ function calculateSpeed() {
 
     if (Mathf.Abs(cur_vy) >= 15) {
         max_vy = true;
+        fire.Play();
     }
 }
