@@ -5,7 +5,8 @@ function Start () {
 }
 
 function Update () {
-    this.transform.Rotate(Vector3.up * Time.deltaTime*20);
+    //this.transform.Rotate(Vector3.up * Time.deltaTime*20);
+    this.transform.position.z+=1;
     print(this.transform.rotation.y);
 }
 
