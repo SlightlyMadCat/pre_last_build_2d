@@ -45,6 +45,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\FPSCounter.cs" />
      <Compile Include="Assets\Prefabs\MoveKeyboardPlayer.cs" />
      <Compile Include="Assets\Prefabs\MoveMousePlayer.cs" />
      <Compile Include="Assets\Prefabs\MovePlayer.cs" />
