@@ -57,7 +57,7 @@ function Update () {
 }
 
 function OnGUI() {
-    GUI.Box(new Rect(70+Screen.width/10,Screen.height/22,150,30), "Score: "+Mathf.Round(score * 100)/100);
+    GUI.Box(new Rect(70+Screen.width/10,Screen.height/22,150,30), "Score: "+Mathf.Round(score * 100)/100+" +("+GameObject.Find("cursor").GetComponent(Rotate).current+")");
 
     if (gameOver == true){
         GUI.Box( new Rect(Screen.width/2 - 200,Screen.height/2 - 160,400,300), "You get "+score+" points of 100. "+n+" barrier(s) touched.");

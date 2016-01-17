@@ -23,6 +23,7 @@ var max_vy = false;
 var style : GUIStyle;
 var count_clouds = 0;
 var fire : ParticleSystem;
+var current : float;
 
 function Start() {
     //fire.Play();
@@ -166,10 +167,12 @@ function calculateSpeed() {
             var mCUR = Mathf.Abs(cur_vy);
 
             if (mVYR >= mCUR) {
-                score += cur_vy/vyr*10;
+                current = cur_vy/vyr*10;
             } else if (mVYR < mCUR){
-                score += vyr/cur_vy*10;
+                current = vyr/cur_vy*10;
             }     
+            current = Mathf.FloorToInt(current);
+            score+=current;
         }
     } else {
         GameObject.Find("plane42").GetComponent(diss_2).fall = false;  
