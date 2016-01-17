@@ -20,6 +20,7 @@ function OnCollisionEnter (Col: Collision) {    //ядреный взрыв
         if (count == 0) {
             big_boom.Play();
             count+=1;
+            GameObject.Find("plane42").GetComponent(diss_2).speed = 0;
         } else {
             big_boom.Stop();
         }

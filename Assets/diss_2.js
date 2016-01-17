@@ -146,25 +146,14 @@ function gameOver() {
     vSpeed = 0;
     this.transform.rotation.x = 0;
     ugol = 0;
+
+    if (GameObject.Find("cursor").GetComponent(Rotate).max_vy == true) {     // превышена максималка
+        speed = 0;
+    }
 }
 
 function OnGUI() {
     var guiMatrix : Matrix4x4 = GUI.matrix;
-
-    /*if (start == false){
-        if (GUI.Button (Rect (Screen.width/2 - 90,Screen.height/2 - 80,180,30), "Start")) { // наша кнопка 
-            start = true;
-            speed = 0.2;
-
-            var audio : AudioSource = GetComponent.<AudioSource>(); //запускаем звук
-            audio.Play();
-        } 
-
-        if (GUI.Button (Rect (Screen.width/2 - 90,Screen.height/2+50 - 80,180,30), "Tutorial")) {
-            //print("tut");
-            Application.LoadLevel("tutorial");
-        }
-    }*/
 
     GUI.DrawTexture(Rect(Screen.width/2-k_screen/2,0,k_screen,k_screen),air_speed);   //было 100,0,200,200
     GUI.DrawTexture(Rect(Screen.width/2+k_screen/2,0,k_screen,k_screen),altmetr);

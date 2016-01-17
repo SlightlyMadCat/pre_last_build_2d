@@ -107,12 +107,16 @@ function Update() {
 function OnGUI() {
     last = max_time - timer;
     //GUI.Box(new Rect(Screen.width/6.5,40,150,30), "Score: "+Mathf.Round(score * 100)/100);
-    GUI.Box(new Rect(150+Screen.width/10,Screen.height/22+30,150,30),"Time: "+last);
-    GUI.Box(new Rect(150+Screen.width/10,Screen.height/22+60,150,30),"Calculated Vy: "+Mathf.Round(vyr * 100)/100);
-    GUI.Box(new Rect(150+Screen.width/10,Screen.height/22+90,150,30),"Real Vy: "+Mathf.Round(cur_vy * 100)/100);
+    GUI.Box(new Rect(120+Screen.width/10,Screen.height/22+30,150,30),"Time: "+last);
+    GUI.Box(new Rect(120+Screen.width/10,Screen.height/22+60,150,30),"Calculated Vy: "+Mathf.Round(vyr * 100)/100);
+    GUI.Box(new Rect(120+Screen.width/10,Screen.height/22+90,150,30),"Real Vy: "+Mathf.Round(cur_vy * 100)/100);
 
     if (max_vy == true){
-        GUI.Box ( new Rect(Screen.width/2 - 300,Screen.height/2,100,100), "Здесь будет финишный экран", style);
+        GUI.Box ( new Rect(Screen.width/2 - 50,Screen.height/2-100,100,100), "You died...", style);
+
+        if (GUI.Button (Rect (Screen.width/2 - 90,Screen.height/2,180,30), "Back to Main Menu")) {
+            Application.LoadLevel("main menu");
+        }
     }
 }
 
@@ -127,7 +131,7 @@ function calculateSpeed() {
     } else if (cur_vy < 0 && new_height-500 >= 2000) {
         new_height-=1200;   
     }
-    print(new_height);
+    //print(new_height);
 
     GameObject.Find("plane42").GetComponent(diss_2).new_height = new_height;
     dh = hPlane - new_height;
